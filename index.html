@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111821">
+  <title>АзияТранзит — автомобили из Китая и Кореи</title>
+  <meta name="description" content="Подбор, проверка и доставка автомобилей из Китая и Южной Кореи в Россию.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="header-inner page-shell">
+      <a class="brand" href="#top" aria-label="АзияТранзит — на главную">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <span class="brand-name">Азия<span>Транзит</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+        <a href="#directions">Автомобили</a>
+        <a href="#inspection">Проверка</a>
+        <a href="#calculator">Расчет</a>
+        <a href="#journey">Доставка</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+      <div class="header-contact"><small>Ежедневно, 9:00–21:00</small><a href="tel:88005550147">8 800 555-01-47</a></div>
+      <button class="header-button" type="button" data-dialog-open="request-dialog">Обсудить автомобиль</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-background" src="assets/hero-asia-transit-port-v1.png" alt="Морской терминал доставки автомобилей">
+      <div class="hero-shade"></div>
+      <div class="hero-inner page-shell">
+        <div class="hero-copy">
+          <p class="hero-origin">Автомобили из Китая и Южной Кореи</p>
+          <h1>Ваш автомобиль из Азии — <em>без сюрпризов</em></h1>
+          <p class="hero-lead">Подберем конкретный экземпляр, проверим до оплаты и покажем весь бюджет до вашего города.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#calculator">Рассчитать стоимость</a>
+            <button class="text-button" type="button" data-dialog-open="request-dialog">Подобрать автомобиль <span>↗</span></button>
+          </div>
+        </div>
+        <img class="hero-car" src="assets/kia-sorento-2026.png" alt="Kia Sorento из Южной Кореи">
+        <div class="hero-price-card">
+          <span>Пример бюджета до Владивостока</span>
+          <strong>от 3,65 млн ₽</strong>
+          <small>Kia Sorento · 2023–2025</small>
+        </div>
+        <div class="hero-status"><i></i><span>Фото и отчет до выкупа</span></div>
+      </div>
+      <div class="hero-bottom page-shell">
+        <div><strong>01</strong><span>Подбираем под ваш бюджет, а не под склад</span></div>
+        <div><strong>02</strong><span>Показываем состояние до оплаты</span></div>
+        <div><strong>03</strong><span>Фиксируем каждый платеж в смете</span></div>
+      </div>
+    </section>
+
+    <section class="directions page-shell" id="directions">
+      <div class="section-title">
+        <h2>Две страны. Два разных рынка. Один понятный выбор.</h2>
+        <p>Не ограничиваем вас одной маркой: сравниваем комплектации, пробег, состояние и итоговую цену в России.</p>
+      </div>
+      <div class="direction-stage">
+        <div class="direction-copy">
+          <div class="market-tabs" role="tablist" aria-label="Выберите рынок">
+            <button class="is-active" type="button" role="tab" aria-selected="true" data-market="korea">Южная Корея</button>
+            <button type="button" role="tab" aria-selected="false" data-market="china">Китай</button>
+          </div>
+          <div class="market-content" id="market-content">
+            <p>Большой выбор автомобилей с пробегом, понятная история обслуживания и богатые комплектации.</p>
+            <dl>
+              <div><dt>Чаще выбирают</dt><dd id="market-models">Kia, Hyundai, Genesis</dd></div>
+              <div><dt>Подходит для</dt><dd id="market-fit">Кроссоверов 2–5 лет</dd></div>
+            </dl>
+            <button type="button" data-dialog-open="request-dialog">Получить варианты <span>→</span></button>
+          </div>
+        </div>
+        <div class="direction-visual">
+          <img id="market-image" src="assets/genesis-gv70-2027.webp" alt="Genesis GV70 из Южной Кореи">
+          <div class="model-caption"><span id="market-brand">Genesis</span><strong id="market-name">GV70</strong><small id="market-price">ориентир от 4,9 млн ₽</small></div>
+        </div>
+        <aside class="direction-side">
+          <div class="mini-model"><img id="side-image-1" src="assets/listings/kia-k3-1.webp" alt="Kia The New K3 из Южной Кореи"><span id="side-origin-1">Южная Корея</span><strong id="side-name-1">Kia The New K3</strong></div>
+          <div class="mini-model"><img id="side-image-2" src="assets/listings/hyundai-avante-1.webp" alt="Hyundai The New Avante из Южной Кореи"><span id="side-origin-2">Южная Корея</span><strong id="side-name-2">Hyundai The New Avante</strong></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="inspection" id="inspection">
+      <img src="assets/inspection-hall-v2.png" alt="Проверка автомобиля перед покупкой">
+      <div class="inspection-overlay"></div>
+      <div class="inspection-content page-shell">
+        <div class="inspection-copy">
+          <h2>Сначала проверка. Потом — решение о покупке.</h2>
+          <p>Вы получаете фото, видео и понятный отчет по конкретному автомобилю. Если состояние не устраивает — ищем следующий.</p>
+          <ul><li>кузов и силовые элементы</li><li>ошибки и работа систем</li><li>история пробега и обслуживания</li><li>салон, опции и комплектность</li></ul>
+        </div>
+        <div class="inspection-report">
+          <span>Отчет по автомобилю</span>
+          <strong>87 пунктов</strong>
+          <div><b>Кузов</b><i class="good"></i><small>без критичных замечаний</small></div>
+          <div><b>Диагностика</b><i class="good"></i><small>ошибок не обнаружено</small></div>
+          <div><b>История</b><i class="warn"></i><small>2 записи обслуживания</small></div>
+          <button type="button" data-dialog-open="request-dialog">Посмотреть пример отчета</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator-section" id="calculator">
+      <div class="calculator-layout page-shell">
+        <div class="calculator-story">
+          <h2>Цена складывается не из одного красивого числа</h2>
+          <p>Показываем отдельно стоимость автомобиля, логистику, таможню, оформление и доставку по России.</p>
+          <div class="cost-flow">
+            <span>Автомобиль</span><i>+</i><span>Логистика</span><i>+</i><span>Таможня</span><i>+</i><span>Ваш город</span>
+          </div>
+          <blockquote>До выкупа вы видите смету и понимаете, на каком этапе понадобится каждый платеж.</blockquote>
+        </div>
+        <form class="import-calculator" id="import-calculator">
+          <div class="calculator-head"><div><span>Расчет для личного ввоза</span><h3>Проверьте автомобиль до покупки</h3></div><div class="country-switch" role="group" aria-label="Страна покупки"><button class="is-active" type="button" data-country="korea">Корея</button><button type="button" data-country="china">Китай</button></div></div>
+          <div class="calculator-fields">
+            <label><span>Цена автомобиля</span><div class="input-unit"><input id="car-price" type="number" min="500000" max="20000000" step="50000" value="2100000"><b>₽</b></div></label>
+            <label><span>Возраст на дату оформления</span><select id="car-age"><option value="under3">до 3 лет</option><option value="3to5">от 3 до 5 лет</option><option value="over5">старше 5 лет</option></select></label>
+            <label><span>Мощность</span><div class="input-unit"><input id="car-power" type="number" min="60" max="700" value="150"><b>л.с.</b></div></label>
+            <label><span>Объем ДВС (бензин или дизель)</span><div class="input-unit"><input id="engine-volume" type="number" min="600" max="7000" step="1" value="1598"><b>см³</b></div></label>
+            <label><span>Курс евро для таможни</span><div class="input-unit"><input id="eur-rate" type="number" min="50" max="250" step="0.1" value="95"><b>₽</b></div></label>
+            <label class="wide-field"><span>Доставка</span><select id="destination"><option value="ekb">Екатеринбург</option><option value="msk">Москва</option><option value="nsk">Новосибирск</option><option value="kzn">Казань</option><option value="vvo">Владивосток</option></select></label>
+          </div>
+          <label class="personal-use-check"><input id="personal-use" type="checkbox" checked><span><b>Ввожу для личного пользования</b><small>Один автомобиль за 12 месяцев и без продажи в течение 12 месяцев после оформления.</small></span></label>
+          <div class="calculator-total"><span>Ориентир до города</span><strong id="result-total">≈ 3 177 000 ₽</strong><small id="result-caption">предварительный итог при льготном сценарии утильсбора</small></div>
+          <div class="calculator-breakdown"><div><span>Автомобиль</span><b id="result-car">2 100 000 ₽</b></div><div><span>Логистика до РФ</span><b id="result-logistics">320 000 ₽</b></div><div><span>Таможенная пошлина</span><b id="result-customs">—</b></div><div><span>Оформление и документы</span><b id="result-paperwork">40 000 ₽</b></div><div><span>Доставка по России</span><b id="result-city">155 000 ₽</b></div><div><span>Утилизационный сбор</span><b id="result-util">—</b></div></div>
+          <div class="calculator-statuses">
+            <div class="eligibility" id="eligibility"><i></i><span><b id="eligibility-title">Проверяем льготный утильсбор</b><small id="eligibility-text">До 160 л.с. включительно и до 3 000 см³ при соблюдении условий личного ввоза.</small></span></div>
+            <div class="eligibility age-status" id="age-status"><i></i><span><b id="age-status-title">Возраст до 3 лет</b><small id="age-status-text">Пошлина зависит от стоимости и объема двигателя.</small></span></div>
+          </div>
+          <p class="calculator-note">Расчет предназначен для легкового автомобиля с бензиновым или дизельным ДВС, ввозимого физлицом. Использованы <a href="https://eec.eaeunion.org/upload/medialibrary/c30/8uxy42l5mogucd8lnp9q3wtc4igi2vki/Prilozhenie-2_107.pdf" target="_blank" rel="noreferrer">таможенные ставки ЕАЭС</a> и коэффициенты по <a href="https://government.ru/docs/all/161708/" target="_blank" rel="noreferrer">Постановлению № 1713</a>. Курс евро редактируется вручную. Не является офертой.</p>
+          <button class="calculator-submit" type="button" data-dialog-open="request-dialog">Получить точный расчет</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="cars-section page-shell" id="cars">
+      <div class="section-title cars-heading">
+        <div><h2>Автомобили в наличии</h2><p>Цена и пробег зафиксированы 7 августа 2026 года. Откройте автомобиль, чтобы увидеть фотографии, характеристики и расчет утильсбора.</p></div>
+        <div class="catalog-filter"><button class="is-active" type="button" data-catalog-filter="all">Все</button><button type="button" data-catalog-filter="korea">Корея</button><button type="button" data-catalog-filter="china">Китай</button></div>
+      </div>
+      <div class="car-track">
+        <article class="car-card" data-origin="korea"><button class="car-photo quick-view-trigger" type="button" data-car-id="kia-k3" aria-label="Открыть Kia The New K3"><img src="assets/listings/kia-k3-1.webp" alt="Kia The New K3 2024 из объявления"><span>Корея</span><b class="car-fee is-good">льготный утиль</b></button><div class="car-meta"><div><small>Kia · 2024</small><h3>The New K3</h3></div><strong>1 897 773 ₽</strong></div><p>1,6 л · 123 л.с. · 33 119 км</p><button class="quick-view-trigger" type="button" data-car-id="kia-k3">Быстрый просмотр <span>↗</span></button></article>
+        <article class="car-card" data-origin="korea"><button class="car-photo quick-view-trigger" type="button" data-car-id="hyundai-avante" aria-label="Открыть Hyundai The New Avante"><img src="assets/listings/hyundai-avante-1.webp" alt="Hyundai The New Avante 2024 из объявления"><span>Корея</span><b class="car-fee is-good">льготный утиль</b></button><div class="car-meta"><div><small>Hyundai · 2024</small><h3>The New Avante</h3></div><strong>1 950 939 ₽</strong></div><p>1,6 л · 123 л.с. · 11 063 км</p><button class="quick-view-trigger" type="button" data-car-id="hyundai-avante">Быстрый просмотр <span>↗</span></button></article>
+        <article class="car-card" data-origin="china"><button class="car-photo quick-view-trigger" type="button" data-car-id="changan-cs35" aria-label="Открыть Changan CS35 Plus"><img src="assets/listings/changan-cs35-1.jpg" alt="Changan CS35 Plus 2024 из объявления"><span>Китай</span><b class="car-fee is-good">160 л.с.</b></button><div class="car-meta"><div><small>Changan · 2024</small><h3>CS35 Plus</h3></div><strong>≈ 2 427 000 ₽</strong></div><p>1,4 л · 160 л.с. · 13 400 км</p><button class="quick-view-trigger" type="button" data-car-id="changan-cs35">Быстрый просмотр <span>↗</span></button></article>
+        <article class="car-card" data-origin="china"><button class="car-photo quick-view-trigger" type="button" data-car-id="geely-monjaro" aria-label="Открыть Geely Monjaro"><img src="assets/listings/geely-monjaro-1.jpg" alt="Geely Monjaro 2024 из объявления"><span>Китай</span><b class="car-fee is-warning">238 л.с.</b></button><div class="car-meta"><div><small>Geely · 2024</small><h3>Monjaro</h3></div><strong>≈ 3 296 000 ₽</strong></div><p>2,0 л · 238 л.с. · 11 400 км</p><button class="quick-view-trigger" type="button" data-car-id="geely-monjaro">Быстрый просмотр <span>↗</span></button></article>
+      </div>
+    </section>
+
+    <section class="journey" id="journey">
+      <img src="assets/port-logistics-v2.png" alt="Доставка автомобилей морем в Россию">
+      <div class="journey-shade"></div>
+      <div class="journey-inner page-shell">
+        <div class="journey-copy"><h2>Вы видите путь автомобиля, а не ждете в неизвестности</h2><p>Фото, документы и статус перевозки собираются в одном месте. Менеджер остается на связи до выдачи ключей.</p></div>
+        <ol class="journey-steps"><li><b>1</b><span>Подбор</span><small>варианты и смета</small></li><li><b>2</b><span>Проверка</span><small>фото и отчет</small></li><li><b>3</b><span>Выкуп</span><small>договор и платеж</small></li><li><b>4</b><span>Порт</span><small>погрузка и страховка</small></li><li><b>5</b><span>Россия</span><small>таможня и ЭПТС</small></li><li><b>6</b><span>Ваш город</span><small>выдача автомобиля</small></li></ol>
+      </div>
+    </section>
+
+    <section class="faq page-shell" id="faq">
+      <div class="faq-intro"><h2>До оплаты не должно оставаться темных мест</h2><p>Коротко отвечаем на вопросы, которые действительно влияют на решение.</p><button type="button" data-dialog-open="request-dialog">Задать свой вопрос</button></div>
+      <div class="faq-list">
+        <details open><summary>Когда становится известна окончательная стоимость?</summary><p>После выбора конкретного автомобиля, проверки его параметров и фиксации курса на дату оплаты. До выкупа вы получаете подробную смету.</p></details>
+        <details><summary>Можно отказаться от найденного варианта?</summary><p>Да, пока автомобиль не согласован и не выкуплен. Все обнаруженные недостатки показываем до принятия решения.</p></details>
+        <details><summary>Как я узнаю, где находится автомобиль?</summary><p>Статусы перевозки, фотографии и документы доступны на каждом ключевом этапе.</p></details>
+        <details><summary>Калькулятор показывает окончательную сумму?</summary><p>Нет, это ориентир. Точный расчет зависит от конкретного автомобиля, курса и действующих правил оформления.</p></details>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="page-shell"><div><h2>Есть модель или только примерный бюджет?</h2><p>Начать можно со ссылки на автомобиль, фотографии или суммы, в которую хотите уложиться.</p></div><button type="button" data-dialog-open="request-dialog">Обсудить подбор <span>→</span></button></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner page-shell">
+      <div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i></span><span class="brand-name">Азия<span>Транзит</span></span></a><p>Подбор и доставка автомобилей из Китая и Южной Кореи в Россию.</p></div>
+      <div class="footer-links"><h3>Услуги</h3><a href="#calculator">Расчет стоимости</a><a href="#cars">Подбор автомобиля</a><a href="#journey">Доставка и оформление</a></div>
+      <div class="footer-links"><h3>Информация</h3><a href="#inspection">Проверка автомобиля</a><a href="#faq">Частые вопросы</a><a href="#">Документы</a></div>
+      <div class="footer-contact"><span>Ответим на вопросы</span><a href="tel:88005550147">8 800 555-01-47</a><small>Ежедневно с 9:00 до 21:00</small></div>
+      <div class="footer-bottom"><span>© 2026 АзияТранзит</span><span>Концепт сайта для портфолио. Цены — снимок объявлений, калькулятор дает предварительный расчет.</span></div>
+    </div>
+  </footer>
+
+  <dialog class="car-dialog" id="car-quick-view" aria-labelledby="quick-view-title">
+    <div class="quick-view-panel">
+      <button class="dialog-close quick-view-close" type="button" aria-label="Закрыть">×</button>
+      <div class="quick-view-gallery">
+        <div class="quick-view-main">
+          <img id="quick-view-image" src="assets/listings/kia-k3-1.webp" alt="">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Предыдущая фотография">←</button>
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Следующая фотография">→</button>
+          <span id="gallery-count">1 / 3</span>
+        </div>
+        <div class="quick-view-thumbs" id="quick-view-thumbs"></div>
+      </div>
+      <div class="quick-view-content">
+        <div class="quick-view-heading"><div><span id="quick-view-origin">Южная Корея</span><h2 id="quick-view-title">Kia The New K3</h2><p id="quick-view-version">2024 · 1.6 Prestige</p></div><strong id="quick-view-price">1 897 773 ₽</strong></div>
+        <div class="quick-view-alert" id="quick-view-alert"><i></i><span><b id="quick-view-fee">Льготный утильсбор: 3 400 ₽</b><small id="quick-view-fee-note">При личном ввозе и соблюдении установленных условий</small></span></div>
+        <dl class="quick-view-specs" id="quick-view-specs"></dl>
+        <div class="quick-view-source"><span>Цена и данные — снимок объявления на 7 августа 2026 года.</span><a id="quick-view-source" href="#" target="_blank" rel="noreferrer">Открыть исходное объявление ↗</a></div>
+        <div class="quick-view-actions"><a class="telegram-button" id="quick-view-telegram" href="https://t.me/asia_transit_demo" target="_blank" rel="noreferrer">Напишите нам в Telegram <span>→</span></a><small>Демонстрационная ссылка для портфолио</small></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="app-dialog" id="request-dialog">
+    <form class="dialog-panel" method="dialog" id="request-form">
+      <button class="dialog-close" value="cancel" aria-label="Закрыть">×</button>
+      <h2>Обсудить автомобиль</h2>
+      <p>Укажите модель или бюджет. Это демонстрационная форма — данные никуда не отправляются.</p>
+      <label><span>Имя</span><input name="name" placeholder="Как к вам обращаться" required></label>
+      <label><span>Автомобиль или бюджет</span><input id="request-car" name="car" placeholder="Например, Kia Sorento или до 4 млн ₽" required></label>
+      <label><span>Телефон</span><input name="phone" type="tel" placeholder="+7 900 000-00-00" required></label>
+      <button class="primary-button" type="submit">Получить консультацию</button>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
