@@ -43,35 +43,45 @@ const markets = {
   }
 };
 
-$$('[data-market]').forEach((button) => button.addEventListener('click', () => {
-  const key = button.dataset.market;
+const marketTabs = $('.market-tabs');
+
+const renderMarket = (key) => {
   const market = markets[key];
+  if (!market) return;
+
   const visual = $('.direction-visual');
-  $$('[data-market]').forEach((item) => {
-    const active = item === button;
+  $$('[data-market]', marketTabs).forEach((item) => {
+    const active = item.dataset.market === key;
     item.classList.toggle('is-active', active);
     item.setAttribute('aria-selected', String(active));
   });
+
   visual.classList.add('is-switching');
-  window.setTimeout(() => {
-    $('#market-image').src = market.image;
-    $('#market-image').alt = market.alt;
-    $('#market-brand').textContent = market.brand;
-    $('#market-name').textContent = market.name;
-    $('#market-price').textContent = market.price;
-    $('#market-content > p').textContent = market.text;
-    $('#market-models').textContent = market.models;
-    $('#market-fit').textContent = market.fit;
-    market.side.forEach((car, index) => {
-      const number = index + 1;
-      $(`#side-image-${number}`).src = car.image;
-      $(`#side-image-${number}`).alt = car.alt;
-      $(`#side-origin-${number}`).textContent = car.origin;
-      $(`#side-name-${number}`).textContent = car.name;
-    });
-    visual.classList.remove('is-switching');
-  }, 160);
-}));
+  $('#market-image').src = market.image;
+  $('#market-image').alt = market.alt;
+  $('#market-brand').textContent = market.brand;
+  $('#market-name').textContent = market.name;
+  $('#market-price').textContent = market.price;
+  $('#market-content > p').textContent = market.text;
+  $('#market-models').textContent = market.models;
+  $('#market-fit').textContent = market.fit;
+
+  market.side.forEach((car, index) => {
+    const number = index + 1;
+    $(`#side-image-${number}`).src = car.image;
+    $(`#side-image-${number}`).alt = car.alt;
+    $(`#side-origin-${number}`).textContent = car.origin;
+    $(`#side-name-${number}`).textContent = car.name;
+  });
+
+  window.requestAnimationFrame(() => visual.classList.remove('is-switching'));
+};
+
+marketTabs?.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-market]');
+  if (!button || !marketTabs.contains(button)) return;
+  renderMarket(button.dataset.market);
+});
 
 const formatMoney = (value) => `${Math.round(value).toLocaleString('ru-RU')} ₽`;
 const cityData = {
