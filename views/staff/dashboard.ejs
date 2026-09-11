@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+<section class="staff-page shell">
+  <div class="staff-page-heading"><div><span class="eyebrow">Рабочее пространство</span><h1>Автомобили и просмотры</h1><p>Статистика учитывает уникальное открытие страницы одним посетителем не чаще раза в 30 минут.</p></div><form action="/staff/cars" method="post"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="button button-primary" type="submit">Добавить автомобиль</button></form></div>
+  <div class="dashboard-stats"><div><strong><%= totals.published || 0 %></strong><span>в продаже</span></div><div><strong><%= totals.drafts || 0 %></strong><span>черновиков</span></div><div><strong><%= totals.archived || 0 %></strong><span>в архиве</span></div><div><strong><%= cars.reduce((sum, car) => sum + Number(car.views_total || 0), 0) %></strong><span>просмотров всего</span></div></div>
+  <div class="staff-car-list">
+    <% cars.forEach(car => { %><article class="staff-car"><img src="<%= car.mainPhotoUrl %>" alt=""><div class="staff-car-main"><span class="status status-<%= car.status %>"><%= car.status === 'published' ? 'В продаже' : car.status === 'draft' ? 'Черновик' : 'В архиве' %></span><h2><%= car.title || 'Новый автомобиль' %></h2><p>Изменен: <%= new Date(car.updated_at + 'Z').toLocaleString('ru-RU') %></p></div><dl class="staff-views"><div><dt>Сегодня</dt><dd><%= car.views_today || 0 %></dd></div><div><dt>7 дней</dt><dd><%= car.views_week || 0 %></dd></div><div><dt>Всего</dt><dd><%= car.views_total || 0 %></dd></div></dl><div class="staff-car-actions"><a class="button button-outline" href="/staff/cars/<%= car.id %>/edit">Редактировать</a><a class="button button-quiet" href="/cars/<%= car.slug %>">Открыть страницу</a></div></article><% }) %>
+  </div>
+</section>
+<%- include('../partials/footer') %>

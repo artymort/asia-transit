@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DK AUTO — автомобили с пробегом, честные характеристики и прямой контакт с продавцом.">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/static/app.css?v=20260823-2">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="/" aria-label="DK AUTO, главная">
+        <strong>DK AUTO</strong>
+        <small><%= settings.dealer_tagline %></small>
+      </a>
+      <nav class="main-nav" aria-label="Главное меню">
+        <a href="/#services">Услуги</a>
+        <a href="/#catalog">Автомобили</a>
+        <a href="/#contacts">Контакты</a>
+        <% if (currentUser) { %><a class="staff-link" href="/staff">Рабочее пространство</a><% } %>
+      </nav>
+      <div class="header-actions">
+        <% if (currentUser) { %>
+          <span class="user-chip"><%= currentUser.displayName %> · <%= currentUser.role === 'admin' ? 'Администратор' : 'Менеджер' %></span>
+          <form action="/logout" method="post"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="button button-quiet" type="submit">Выйти</button></form>
+        <% } else { %>
+          <a class="button button-primary header-phone" href="tel:<%= settings.phone_link %>"><span>Позвонить</span><b><%= settings.phone %></b></a>
+        <% } %>
+      </div>
+    </div>
+  </header>
+  <main>

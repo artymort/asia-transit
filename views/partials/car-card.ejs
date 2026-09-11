@@ -1,0 +1,18 @@
+<article class="catalog-card" data-car-card>
+  <a class="catalog-photo" href="/cars/<%= car.slug %>">
+    <img src="<%= car.mainPhotoUrl %>" alt="<%= car.title %>" loading="lazy">
+    <span class="availability">В наличии</span>
+  </a>
+  <div class="catalog-content">
+    <div class="catalog-heading">
+      <div><span class="car-kicker"><%= car.brand %> · <%= car.year || 'Год уточняется' %></span><h3><a href="/cars/<%= car.slug %>"><%= car.model || car.title %></a></h3></div>
+      <% if (car.price_public) { %><strong class="car-price"><%= formatPrice(car.price) %></strong><% } %>
+    </div>
+    <div class="catalog-specs"><span><%= formatNumber(car.mileage) %> км</span><span><%= car.body_type || 'Кузов уточняется' %></span></div>
+    <p><%= car.description ? `${car.description.slice(0, 180)}${car.description.length > 180 ? '…' : ''}` : 'Подробности об автомобиле уточняйте у менеджера.' %></p>
+    <div class="catalog-footer">
+      <a class="button button-outline" href="/cars/<%= car.slug %>">Фотографии и характеристики</a>
+      <% if (currentUser) { %><span class="views-badge"><b><%= car.view_count || 0 %></b> просмотров</span><a class="button button-quiet" href="/staff/cars/<%= car.id %>/edit">Редактировать</a><% } %>
+    </div>
+  </div>
+</article>

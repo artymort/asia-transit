@@ -1,0 +1,12 @@
+  </main>
+  <footer class="site-footer" id="contacts">
+    <div class="shell footer-grid">
+      <div><a class="brand brand-footer" href="/"><strong>DK AUTO</strong><small><%= settings.dealer_tagline %></small></a><p>Публичная витрина автомобилей и прямой контакт с продавцом.</p></div>
+      <div><h2>Связаться</h2><a href="tel:<%= settings.phone_link %>"><%= settings.phone %></a><a href="<%= settings.telegram %>" target="_blank" rel="noopener">Telegram</a><a href="<%= settings.whatsapp %>" target="_blank" rel="noopener">WhatsApp</a></div>
+      <div><h2>Приехать</h2><p><%= settings.address %></p><p><%= settings.hours %></p></div>
+      <% if (!currentUser) { %><div><h2>Сотрудникам</h2><a href="/login">Войти в систему</a></div><% } %>
+    </div>
+  </footer>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

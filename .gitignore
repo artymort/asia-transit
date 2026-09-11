@@ -1,4 +1,8 @@
 design-concepts/
 .DS_Store
 Thumbs.db
-
+node_modules/
+.env
+data/
+uploads/
+npm-debug.log*

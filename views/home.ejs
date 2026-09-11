@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+<section class="hero home-hero">
+  <div class="shell hero-layout">
+    <div class="hero-copy">
+      <h1>Надежные автомобили<br>с пробегом</h1>
+      <h2>для жизни и движения вперед</h2>
+      <p>Подбираем лучшие варианты, честно оцениваем состояние и помогаем с выгодной покупкой.</p>
+      <div class="hero-actions"><a class="button button-primary" href="#catalog">Смотреть автомобили</a><a class="button button-outline" href="#services">Рассчитать кредит</a></div>
+    </div>
+    <div class="hero-media"><img src="/assets/dk-auto-hero-v1.png" alt="Зеленый автомобиль DK AUTO"></div>
+  </div>
+</section>
+
+<section class="services shell" id="services">
+  <div class="section-intro"><span class="eyebrow">Все в одном месте</span><h2>Помогаем решить вопрос с автомобилем</h2><p>От выбора машины до выкупа, кредита и обмена.</p></div>
+  <div class="services-grid">
+    <% services.forEach((service, index) => { %>
+      <article class="service-card <%= index === 0 ? 'service-card-large' : '' %>"><img src="/<%= service.image_path %>" alt=""><div><h3><%= service.title %></h3><p><%= service.description %></p><a href="tel:<%= settings.phone_link %>">Узнать подробности →</a></div></article>
+    <% }) %>
+  </div>
+</section>
+
+<section class="catalog-section" id="catalog">
+  <div class="shell">
+    <div class="section-intro section-intro-row"><div><h2>Популярные автомобили</h2><p>Реальные фотографии, понятные цены и подробные характеристики.</p></div><strong class="catalog-count"><%= totalCars %><small>машин в продаже</small></strong></div>
+    <div class="catalog-list" id="catalog-list">
+      <% cars.forEach(car => { %><%- include('partials/car-card', { car }) %><% }) %>
+    </div>
+    <% if (totalCars > cars.length) { %><button class="button button-outline load-more" id="load-more" data-offset="<%= cars.length %>" type="button">Загрузить еще</button><% } %>
+  </div>
+</section>
+
+<section class="contact-strip">
+  <div class="shell contact-strip-inner"><div><span class="eyebrow">Прямой контакт</span><h2>Приезжайте на осмотр</h2><p><%= settings.address %> · <%= settings.hours %></p></div><div class="contact-actions"><a class="button button-primary" href="tel:<%= settings.phone_link %>">Позвонить</a><a class="button button-outline" href="<%= settings.telegram %>" target="_blank" rel="noopener">Написать в Telegram</a></div></div>
+</section>
+<%- include('partials/footer') %>

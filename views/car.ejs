@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<section class="car-page shell">
+  <nav class="breadcrumbs"><a href="/">Главная</a><span>→</span><a href="/#catalog">Автомобили</a><span>→</span><b><%= car.title %></b></nav>
+  <% if (currentUser) { %><div class="staff-toolbar"><div><b><%= car.status === 'published' ? 'В продаже' : car.status === 'draft' ? 'Черновик' : 'В архиве' %></b><span>Сегодня: <%= viewStats.today || 0 %> · 7 дней: <%= viewStats.week || 0 %> · Всего: <%= viewStats.total || 0 %></span></div><a class="button button-primary" href="/staff/cars/<%= car.id %>/edit">Редактировать</a></div><% } %>
+  <header class="car-title-row"><div><span class="eyebrow"><%= car.brand %> · <%= car.year || 'Год уточняется' %></span><h1><%= car.model || car.title %></h1><p><%= formatNumber(car.mileage) %> км · <%= car.body_type || 'Тип кузова уточняется' %></p></div><% if (car.price_public) { %><strong><%= formatPrice(car.price) %></strong><% } %></header>
+  <div class="car-gallery" data-gallery>
+    <div class="gallery-main"><img id="gallery-main" src="<%= photos[0]?.url || '/assets/dk-auto-hero-v1.png' %>" alt="<%= car.title %>"></div>
+    <div class="gallery-thumbs"><% photos.forEach((photo, index) => { %><button type="button" class="gallery-thumb <%= index === 0 ? 'is-active' : '' %>" data-gallery-src="<%= photo.url %>"><img src="<%= photo.thumbUrl %>" alt=""></button><% }) %></div>
+  </div>
+  <div class="car-detail-grid">
+    <article class="car-description"><h2>Об автомобиле</h2><p><%= car.description || 'Описание автомобиля уточняйте у менеджера.' %></p><% if (videos.length) { %><h2>Видео</h2><p>Видео будет встроено после проверки ссылки менеджером.</p><% } %></article>
+    <aside class="spec-panel"><h2>Характеристики</h2><dl><dt>Год выпуска</dt><dd><%= car.year || '—' %></dd><dt>Пробег</dt><dd><%= formatNumber(car.mileage) %> км</dd><dt>Кузов</dt><dd><%= car.body_type || '—' %></dd><% characteristics.forEach(item => { %><dt><%= item.name %><% if (currentUser && !item.is_public) { %><span class="private-label">внутреннее</span><% } %></dt><dd><%= item.value %></dd><% }) %></dl></aside>
+  </div>
+</section>
+<div class="sticky-contact"><span><b><%= car.model || car.title %></b><% if (car.price_public) { %><small><%= formatPrice(car.price) %></small><% } %></span><a class="button button-primary" href="tel:<%= settings.phone_link %>">Позвонить</a><a class="button button-outline" href="<%= settings.telegram %>" target="_blank" rel="noopener">Telegram</a><a class="button button-outline" href="<%= settings.whatsapp %>" target="_blank" rel="noopener">WhatsApp</a></div>
+<%- include('partials/footer') %>

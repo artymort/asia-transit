@@ -1,0 +1,28 @@
+{
+  "name": "dk-auto-market",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Публичная витрина и рабочее место сотрудников авторынка DK AUTO",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "check": "node --check server.js && node --check src/app.js && node --check src/db.js",
+    "create-admin": "node scripts/create-admin.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "multer": "^2.0.2",
+    "pdfkit": "^0.17.2",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.4",
+    "zod": "^4.1.12"
+  }
+}
