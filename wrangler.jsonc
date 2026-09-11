@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dk-auto-market",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-11",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "dk-auto-market",
+      "database_id": "abff2d3e-9e73-4ca4-9a2c-c7414ea5210d"
+    }
+  ],
+  "vars": {
+    "ADMIN_LOGIN": "admin"
+  }
+}

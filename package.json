@@ -8,6 +8,8 @@
     "dev": "node --watch server.js",
     "start": "node server.js",
     "check": "node --check server.js && node --check src/app.js && node --check src/db.js",
+    "check:cloudflare": "node --check worker/index.js && node scripts/build-cloudflare.js",
+    "build:cloudflare": "node scripts/build-cloudflare.js",
     "create-admin": "node scripts/create-admin.js"
   },
   "engines": {
@@ -24,5 +26,8 @@
     "qrcode": "^1.5.4",
     "sharp": "^0.34.4",
     "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "wrangler": "^4.131.0"
   }
 }
